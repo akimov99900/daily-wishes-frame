@@ -9,12 +9,7 @@ export default async function handler(req, res) {
       "💫 Today is your day to shine! Believe in yourself and amazing things will happen.",
       "🚀 Take a leap of faith and watch how the universe supports your dreams today.",
       "🌈 Something wonderful is about to happen. Stay open to beautiful surprises!",
-      "🎯 Your hard work is about to pay off. Success is closer than you think!",
-      "❤️ Today, someone will appreciate you more than you know. Spread kindness!",
-      "📚 A new opportunity for learning and growth will appear. Embrace it!",
-      "💰 Financial abundance is coming your way. Stay positive about money!",
-      "🌙 Tonight will bring you peace and clarity. Trust your intuition.",
-      "🎨 Your creativity will bloom today. Express yourself freely!"
+      "🎯 Your hard work is about to pay off. Success is closer than you think!"
     ];
 
     const randomWish = dailyWishes[Math.floor(Math.random() * dailyWishes.length)];
@@ -28,8 +23,11 @@ export default async function handler(req, res) {
           <meta property="fc:frame:button:1" content="🔮 Another Wish" />
           <meta property="fc:frame:post_url" content="https://daily-wishes-frame.vercel.app/api/wish" />
           <meta property="og:image" content="https://i.imgur.com/8B3Vx2k.png" />
+          <meta property="og:title" content="${randomWish}" />
       </head>
-      <body><div style="display: none;">${randomWish}</div></body>
+      <body>
+        <div style="display: none;">${randomWish}</div>
+      </body>
       </html>
     `;
 
