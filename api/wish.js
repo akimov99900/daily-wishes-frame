@@ -25,9 +25,7 @@ export default async function handler(req, res) {
           <meta property="og:image" content="https://i.imgur.com/8B3Vx2k.png" />
           <meta property="og:title" content="${randomWish}" />
       </head>
-      <body>
-        <div style="display: none;">${randomWish}</div>
-      </body>
+      <body></body>
       </html>
     `;
 
@@ -35,6 +33,7 @@ export default async function handler(req, res) {
     res.status(200).send(htmlResponse);
 
   } catch (error) {
+    // Fallback to initial frame
     const fallbackResponse = `
       <!DOCTYPE html>
       <html>
